@@ -19,9 +19,10 @@ pipeline {
             }
         }
 
-        stage('Prepare all yml files') {
+        stage('Send to S3') {
             steps {
-                sh 'pwd;ls -l;/usr/bin/aws s3 ls s3://donet-build'
+                sh 'pwd;ls -l;/usr/bin/aws s3 ls s3://donet-build;'
+                sh 'tar -cvf project.tar .;ls -l; /usr/bin/aws s3 cp project.tar s3://donet-build/project.tar'
             }
         }
 
