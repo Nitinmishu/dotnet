@@ -12,13 +12,13 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo 'Stage2'
+                sh 'dotnet build LibraryApp.csproj'
             }
         }
 
         stage('Prepare all yml files') {
             steps {
-                sh '/usr/bin/aws s3 ls s3://donet-build'
+                sh 'pwd;ls -l;/usr/bin/aws s3 ls s3://donet-build'
             }
         }
 
