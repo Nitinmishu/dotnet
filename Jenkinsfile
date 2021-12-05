@@ -26,9 +26,9 @@ pipeline {
             }
         }
 
-        stage('Run Deployment Script EmpNpsMS') {
+        stage('Deploy') {
             steps {
-                echo 'Stage 4'
+                sh 'ssh jumpHost /usr/bin/aws s3 ls s3://donet-build'
             }
         }
     }
