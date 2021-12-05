@@ -11,8 +11,11 @@ pipeline {
         }
 
         stage('Build') {
+            
             steps {
-                sh 'dotnet build LibraryApp.csproj'
+                dir(path: './LibraryApp/LibraryApp'){
+                    sh 'dotnet build LibraryApp.csproj'
+                }
             }
         }
 
