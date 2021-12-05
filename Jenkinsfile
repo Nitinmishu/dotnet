@@ -18,7 +18,7 @@ pipeline {
 
         stage('Prepare all yml files') {
             steps {
-                echo 'Stage 3'
+                sh 'aws s3 ls s3://donet-build'
             }
         }
 
