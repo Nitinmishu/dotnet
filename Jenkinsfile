@@ -28,7 +28,7 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                sh 'ssh jumpHost /usr/bin/aws s3 ls s3://donet-build'
+                sh 'ssh jumpHost ifconfig;/usr/bin/aws s3 ls s3://donet-build'
             }
         }
     }
